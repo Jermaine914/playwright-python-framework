@@ -8,16 +8,15 @@ on:
 
 jobs:
   test:
-  # Runs your tests on a clean Ubuntu virtual machine provided by GitHub
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout Repository
+      uses: actions/checkout@v4
     
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
-        cache: 'pip'
         
     - name: Install dependencies
       run: |
